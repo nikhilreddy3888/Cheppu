@@ -18,8 +18,8 @@ The easiest way to build Cheppu is using the included Makefile, which automates 
 
 ```bash
 # Clone the repository
-git clone https://github.com/Beingpax/VoiceInk.git
-cd VoiceInk
+git clone https://github.com/nikhilreddy3888/Cheppu.git
+cd Cheppu
 
 # Build everything (recommended for first-time setup)
 make all
@@ -59,8 +59,8 @@ This approach ensures consistent builds across different machines and eliminates
 If you don't have an Apple Developer certificate, use `make local`:
 
 ```bash
-git clone https://github.com/Beingpax/VoiceInk.git
-cd VoiceInk
+git clone https://github.com/nikhilreddy3888/Cheppu.git
+cd Cheppu
 make local
 open ~/Downloads/Cheppu.app
 ```
@@ -96,8 +96,8 @@ This will create the XCFramework at `build-apple/whisper.xcframework`.
 
 1. Clone the Cheppu repository:
 ```bash
-git clone https://github.com/Beingpax/VoiceInk.git
-cd VoiceInk
+git clone https://github.com/nikhilreddy3888/Cheppu.git
+cd Cheppu
 ```
 
 2. Add the whisper.xcframework to your project:

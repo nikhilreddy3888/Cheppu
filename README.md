@@ -1,106 +1,79 @@
 <div align="center">
-  <img src="Cheppu/Assets.xcassets/AppIcon.appiconset/256-mac.png" width="180" height="180" />
+  <img src="VoiceInk/Assets.xcassets/AppIcon.appiconset/256-mac.png" width="180" height="180" />
   <h1>Cheppu</h1>
-  <p>Voice to text app for macOS to transcribe what you say to text almost instantly</p>
+  <p>Free, open-source, privacy-focused voice-to-text for macOS.</p>
+  <p><em>Check out the full guide for building and using Cheppu: <a href="CHEPPU_GUIDE.md">CHEPPU_GUIDE.md</a></em></p>
 
   [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
   ![Platform](https://img.shields.io/badge/platform-macOS%2014.0%2B-brightgreen)
-  [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Beingpax/VoiceInk)](https://github.com/Beingpax/VoiceInk/releases)
-  ![GitHub all releases](https://img.shields.io/github/downloads/Beingpax/VoiceInk/total)
-  ![GitHub stars](https://img.shields.io/github/stars/Beingpax/VoiceInk?style=social)
-  <p>
-    <a href="https://github.com/Beingpax/Cheppu">Website</a> •
-    <a href="https://">YouTube</a>
-  </p>
-
-  <a href="https://github.com/Beingpax/Cheppu">
-    <img src="https://img.shields.io/badge/Download%20Now-Latest%20Version-blue?style=for-the-badge&logo=apple" alt="Download Cheppu" width="250"/>
-  </a>
 </div>
 
 ---
 
-Cheppu is a native macOS application that transcribes what you say to text almost instantly. You can find all the information and download the app from [here](https://github.com/Beingpax/VoiceInk). 
-
-![Cheppu Mac App](https://github.com/user-attachments/assets/12367379-83e7-48a6-b52c-4488a6a04bba)
-
-After dedicating the past 5 months to developing this app, I've decided to open source it for the greater good. 
-
-My goal is to make it **the most efficient and privacy-focused voice-to-text solution for macOS** that is a joy to use. While the source code is now open for experienced developers to build and contribute, purchasing a license helps support continued development and gives you access to automatic updates, priority support, and upcoming features.
+**Cheppu** is a native macOS application that transcribes what you say to text almost instantly. It is a fork of [VoiceInk](https://github.com/Beingpax/VoiceInk), rebranded and modified to be completely free and open-source.
 
 ## Features
 
 - 🎙️ **Accurate Transcription**: Local AI models that transcribe your voice to text with 99% accuracy, almost instantly
-- 🔒 **Privacy First**: 100% offline processing ensures your data never leaves your device
+- 🔒 **Privacy First**: 100% offline processing ensures your data never leaves your device (unless you explicitly enable optional cloud features)
 - ⚡ **Power Mode**: Intelligent app detection automatically applies your perfect pre-configured settings based on the app/ URL you're on
 - 🧠 **Context Aware**: Smart AI that understands your screen content and adapts to the context
 - 🎯 **Global Shortcuts**: Configurable keyboard shortcuts for quick recording and push-to-talk functionality
 - 📝 **Personal Dictionary**: Train the AI to understand your unique terminology with custom words, industry terms, and smart text replacements
 - 🔄 **Smart Modes**: Instantly switch between AI-powered modes optimized for different writing styles and contexts
 - 🤖 **AI Assistant**: Built-in voice assistant mode for a quick chatGPT like conversational assistant
+- 💸 **Completely Free**: No licensing system, no paywalls, no trial restrictions.
 
-## Get Started
+## Installation
 
-### Download
-Get the latest version with a free trial from [github.com/Beingpax/VoiceInk](https://github.com/Beingpax/VoiceInk). Your purchase helps me work on Cheppu full-time and continuously improve it with new features and updates.
+### Method 1: Build from Source (Recommended)
 
-#### Homebrew
-Alternatively, you can install Cheppu via `brew`:
+Since Cheppu is not yet notarized by Apple, the best way to get it is to build it yourself (it takes < 15 mins).
 
-```shell
-brew install --cask cheppu
-```
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/nikhilreddy3888/Cheppu.git
+    cd Cheppu
+    ```
 
-### Build from Source
-As an open-source project, you can build Cheppu yourself by following the instructions in [BUILDING.md](BUILDING.md). However, the compiled version includes additional benefits like automatic updates, priority support via Discord and email, and helps fund ongoing development.
+2.  **Build the app:**
+    ```bash
+    make local
+    ```
+    This will compile `whisper.cpp` and build `Cheppu.app` into your `~/Downloads` folder.
 
-## Requirements
+3.  **Install:**
+    - Open `~/Downloads`
+    - Drag `Cheppu.app` to `/Applications`
+    - **Right-click** on the app and select **Open** (required because it's ad-hoc signed)
 
-- macOS 14.4 or later
+For detailed build instructions, see [CHEPPU_GUIDE.md](CHEPPU_GUIDE.md).
 
-## Documentation
+## Usage
 
-- [Building from Source](BUILDING.md) - Detailed instructions for building the project
-- [Contributing Guidelines](CONTRIBUTING.md) - How to contribute to Cheppu
-- [Code of Conduct](CODE_OF_CONDUCT.md) - Our community standards
+1.  Launch **Cheppu** from your Applications folder.
+2.  Grant the necessary permissions (Microphone, Accessibility, Screen Recording).
+3.  Use the global shortcut (default: `Option + Space` or configured in settings) to start recording.
+4.  Speak! Your text will be typed into the active window.
 
 ## Contributing
 
-We welcome contributions! However, please note that all contributions should align with the project's goals and vision. Before starting work on any feature or fix:
+Contributions are welcome! If you'd like to improve Cheppu:
 
-1. Read our [Contributing Guidelines](CONTRIBUTING.md)
-2. Open an issue to discuss your proposed changes
-3. Wait for maintainer feedback
-
-For build instructions, see our [Building Guide](BUILDING.md).
+1.  Fork the repository.
+2.  Create a feature branch (`git checkout -b feature/amazing-feature`).
+3.  Commit your changes (`git commit -m 'Add some amazing feature'`).
+4.  Push to the branch (`git push origin feature/amazing-feature`).
+5.  Open a Pull Request.
 
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
-## Support
-
-If you encounter any issues or have questions, please:
-1. Check the existing issues in the GitHub repository
-2. Create a new issue if your problem isn't already reported
-3. Provide as much detail as possible about your environment and the problem
-
 ## Acknowledgments
 
-### Core Technology
-- [whisper.cpp](https://github.com/ggerganov/whisper.cpp) - High-performance inference of OpenAI's Whisper model
-- [FluidAudio](https://github.com/FluidInference/FluidAudio) - Used for Parakeet model implementation
-
-### Essential Dependencies
-- [Sparkle](https://github.com/sparkle-project/Sparkle) - Keeping Cheppu up to date
-- [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) - User-customizable keyboard shortcuts
-- [LaunchAtLogin](https://github.com/sindresorhus/LaunchAtLogin) - Launch at login functionality
-- [MediaRemoteAdapter](https://github.com/ejbills/mediaremote-adapter) - Media playback control during recording
-- [Zip](https://github.com/marmelroy/Zip) - File compression and decompression utilities
-- [SelectedTextKit](https://github.com/tisfeng/SelectedTextKit) - A modern macOS library for getting selected text
-- [Swift Atomics](https://github.com/apple/swift-atomics) - Low-level atomic operations for thread-safe concurrent programming
-
-
----
-
-Made with ❤️ by Pax
+-   **Original Project**: [VoiceInk](https://github.com/Beingpax/VoiceInk) by Beingpax.
+-   [whisper.cpp](https://github.com/ggerganov/whisper.cpp) - High-performance inference of OpenAI's Whisper model
+-   [FluidAudio](https://github.com/FluidInference/FluidAudio) - Used for Parakeet model implementation
+-   [Sparkle](https://github.com/sparkle-project/Sparkle) - Keeping extensions up to date
+-   [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) - User-customizable keyboard shortcuts
