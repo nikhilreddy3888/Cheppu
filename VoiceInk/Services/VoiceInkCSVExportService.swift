@@ -3,14 +3,14 @@ import Foundation
 import AppKit
 import SwiftData
 
-class VoiceInkCSVExportService {
+class CheppuCSVExportService {
     
     func exportTranscriptionsToCSV(transcriptions: [Transcription]) {
         let csvString = generateCSV(for: transcriptions)
         
         let savePanel = NSSavePanel()
         savePanel.allowedContentTypes = [.commaSeparatedText]
-        savePanel.nameFieldStringValue = "VoiceInk-transcription.csv"
+        savePanel.nameFieldStringValue = "Cheppu-transcription.csv"
         
         savePanel.begin { result in
             if result == .OK, let url = savePanel.url {

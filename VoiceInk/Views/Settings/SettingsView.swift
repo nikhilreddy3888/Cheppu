@@ -239,7 +239,7 @@ struct SettingsView: View {
             } header: {
                 Text("Privacy")
             } footer: {
-                Text("Control how VoiceInk handles your transcription data and audio recordings.")
+                Text("Control how Cheppu handles your transcription data and audio recordings.")
             }
 
             // MARK: - Diagnostics
@@ -367,7 +367,7 @@ struct PowerModeSection: View {
                 isEnabled: toggleBinding,
                 label: "Power Mode",
                 infoMessage: "Apply custom settings based on active app or website.",
-                infoURL: "https://tryvoiceink.com/docs/power-mode"
+                infoURL: "https:///power-mode"
             ) {
                 Toggle(isOn: $powerModeAutoRestoreEnabled) {
                     HStack(spacing: 4) {

@@ -37,7 +37,7 @@ struct TrialMessageView: View {
                 .buttonStyle(.bordered)
 
                 Button(action: {
-                    if let url = URL(string: "https://tryvoiceink.com/buy") {
+                    if let url = URL(string: "https://") {
                         NSWorkspace.shared.open(url)
                     }
                 }) {

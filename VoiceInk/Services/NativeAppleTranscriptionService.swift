@@ -9,7 +9,7 @@ import Speech
 /// Transcription service that leverages the new SpeechAnalyzer / SpeechTranscriber API available on macOS 26 (Tahoe).
 /// Falls back with an unsupported-provider error on earlier OS versions so the application can gracefully degrade.
 class NativeAppleTranscriptionService: TranscriptionService {
-    private let logger = Logger(subsystem: "com.prakashjoshipax.voiceink", category: "NativeAppleTranscriptionService")
+    private let logger = Logger(subsystem: "com.prakashjoshipax.cheppu", category: "NativeAppleTranscriptionService")
     
     /// Maps simple language codes to Apple's BCP-47 locale format
     private func mapToAppleLocale(_ simpleCode: String) -> String {
@@ -147,9 +147,9 @@ class NativeAppleTranscriptionService: TranscriptionService {
     
     // Forward-compatibility: Use Any here because SpeechTranscriber is only available in future macOS SDKs.
     // This avoids referencing an unavailable SDK symbol while keeping the method shape for later adoption.
+    #if canImport(Speech) && ENABLE_NATIVE_SPEECH_ANALYZER
     @available(macOS 26, *)
     private func ensureModelIsAvailable(for transcriber: SpeechTranscriber, locale: Locale) async throws {
-        #if canImport(Speech) && ENABLE_NATIVE_SPEECH_ANALYZER
         let installedLocales = await SpeechTranscriber.installedLocales
         let isInstalled = installedLocales.map({ $0.identifier(.bcp47) }).contains(locale.identifier(.bcp47))
 
@@ -164,6 +164,6 @@ class NativeAppleTranscriptionService: TranscriptionService {
                 // Note: We don't throw an error here, as transcription might still work with a base model.
             }
         }
-        #endif
     }
+    #endif
 } 

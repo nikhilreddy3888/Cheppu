@@ -4,9 +4,9 @@ import AppKit
 class WindowManager: NSObject {
     static let shared = WindowManager()
     
-    private static let mainWindowIdentifier = NSUserInterfaceItemIdentifier("com.prakashjoshipax.voiceink.mainWindow")
-    private static let onboardingWindowIdentifier = NSUserInterfaceItemIdentifier("com.prakashjoshipax.voiceink.onboardingWindow")
-    private static let mainWindowAutosaveName = NSWindow.FrameAutosaveName("VoiceInkMainWindowFrame")
+    private static let mainWindowIdentifier = NSUserInterfaceItemIdentifier("com.prakashjoshipax.cheppu.mainWindow")
+    private static let onboardingWindowIdentifier = NSUserInterfaceItemIdentifier("com.prakashjoshipax.cheppu.onboardingWindow")
+    private static let mainWindowAutosaveName = NSWindow.FrameAutosaveName("CheppuMainWindowFrame")
     
     private weak var mainWindow: NSWindow?
     private var didApplyInitialPlacement = false
@@ -28,7 +28,7 @@ class WindowManager: NSObject {
         window.titleVisibility = .hidden
         window.backgroundColor = .windowBackgroundColor
         window.isReleasedWhenClosed = false
-        window.title = "VoiceInk"
+        window.title = "Cheppu"
         window.collectionBehavior = [.fullScreenPrimary]
         window.level = .normal
         window.isOpaque = true
@@ -54,7 +54,7 @@ class WindowManager: NSObject {
         window.backgroundColor = .clear
         window.isReleasedWhenClosed = false
         window.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary]
-        window.title = "VoiceInk Onboarding"
+        window.title = "Cheppu Onboarding"
         window.isOpaque = false
         window.minSize = NSSize(width: 900, height: 780)
         window.makeKeyAndOrderFront(nil)

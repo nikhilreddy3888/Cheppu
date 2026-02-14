@@ -81,7 +81,7 @@ struct PowerModeView: View {
                                 
                                 InfoTip(
                                     "Automatically apply custom configurations based on the app/website you are using.",
-                                    learnMoreURL: "https://tryvoiceink.com/docs/power-mode"
+                                    learnMoreURL: "https:///power-mode"
                                 )
                             }
                             
@@ -217,7 +217,7 @@ struct PowerModeView: View {
                                                         .font(.system(size: 20, weight: .medium))
                                                         .foregroundColor(.primary)
                                                     
-                                                    Text("Create first power mode to automate your VoiceInk workflow based on apps/website you are using")
+                                                    Text("Create first power mode to automate your Cheppu workflow based on apps/website you are using")
                                                         .font(.system(size: 14))
                                                         .foregroundColor(.secondary)
                                                         .multilineTextAlignment(.center)

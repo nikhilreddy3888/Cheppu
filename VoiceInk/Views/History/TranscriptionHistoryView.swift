@@ -18,7 +18,7 @@ struct TranscriptionHistoryView: View {
     @State private var hasMoreContent = true
     @State private var lastTimestamp: Date?
 
-    private let exportService = VoiceInkCSVExportService()
+    private let exportService = CheppuCSVExportService()
     private let minSidebarWidth: CGFloat = 200
     private let maxSidebarWidth: CGFloat = 350
     private let pageSize = 20

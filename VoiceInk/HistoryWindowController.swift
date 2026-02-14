@@ -6,8 +6,8 @@ class HistoryWindowController: NSObject, NSWindowDelegate {
     static let shared = HistoryWindowController()
 
     private var historyWindow: NSWindow?
-    private let windowIdentifier = NSUserInterfaceItemIdentifier("com.prakashjoshipax.voiceink.historyWindow")
-    private let windowAutosaveName = NSWindow.FrameAutosaveName("VoiceInkHistoryWindowFrame")
+    private let windowIdentifier = NSUserInterfaceItemIdentifier("com.prakashjoshipax.cheppu.historyWindow")
+    private let windowAutosaveName = NSWindow.FrameAutosaveName("CheppuHistoryWindowFrame")
 
     private override init() {
         super.init()
@@ -46,7 +46,7 @@ class HistoryWindowController: NSObject, NSWindowDelegate {
         )
 
         window.contentViewController = hostingController
-        window.title = "VoiceInk — Transcription History"
+        window.title = "Cheppu — Transcription History"
         window.identifier = windowIdentifier
         window.delegate = self
         window.titlebarAppearsTransparent = true

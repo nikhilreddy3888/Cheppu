@@ -1,6 +1,6 @@
-# Building VoiceInk
+# Building Cheppu
 
-This guide provides detailed instructions for building VoiceInk from source.
+This guide provides detailed instructions for building Cheppu from source.
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ Before you begin, ensure you have:
 
 ## Quick Start with Makefile (Recommended)
 
-The easiest way to build VoiceInk is using the included Makefile, which automates the entire build process including building and linking the whisper framework.
+The easiest way to build Cheppu is using the included Makefile, which automates the entire build process including building and linking the whisper framework.
 
 ### Simple Build Commands
 
@@ -33,9 +33,9 @@ make dev
 - `make check` or `make healthcheck` - Verify all required tools are installed
 - `make whisper` - Clone and build whisper.cpp XCFramework automatically
 - `make setup` - Prepare the whisper framework for linking
-- `make build` - Build the VoiceInk Xcode project
+- `make build` - Build the Cheppu Xcode project
 - `make local` - Build for local use (no Apple Developer certificate needed)
-- `make run` - Launch the built VoiceInk app
+- `make run` - Launch the built Cheppu app
 - `make dev` - Build and run (ideal for development workflow)
 - `make all` - Complete build process (default)
 - `make clean` - Remove build artifacts and dependencies
@@ -44,7 +44,7 @@ make dev
 ### How the Makefile Helps
 
 The Makefile automatically:
-1. **Manages Dependencies**: Creates a dedicated `~/VoiceInk-Dependencies` directory for all external frameworks
+1. **Manages Dependencies**: Creates a dedicated `~/Cheppu-Dependencies` directory for all external frameworks
 2. **Builds Whisper Framework**: Clones whisper.cpp and builds the XCFramework with the correct configuration
 3. **Handles Framework Linking**: Sets up the whisper.xcframework in the proper location for Xcode to find
 4. **Verifies Prerequisites**: Checks that git, xcodebuild, and swift are installed before building
@@ -62,16 +62,16 @@ If you don't have an Apple Developer certificate, use `make local`:
 git clone https://github.com/Beingpax/VoiceInk.git
 cd VoiceInk
 make local
-open ~/Downloads/VoiceInk.app
+open ~/Downloads/Cheppu.app
 ```
 
-This builds VoiceInk with ad-hoc signing using a separate build configuration (`LocalBuild.xcconfig`) that requires no Apple Developer account.
+This builds Cheppu with ad-hoc signing using a separate build configuration (`LocalBuild.xcconfig`) that requires no Apple Developer account.
 
 ### How It Works
 
 The `make local` command uses:
 - `LocalBuild.xcconfig` to override signing and entitlements settings
-- `VoiceInk.local.entitlements` (stripped-down, no CloudKit/keychain groups)
+- `Cheppu.local.entitlements` (stripped-down, no CloudKit/keychain groups)
 - `LOCAL_BUILD` Swift compilation flag for conditional code paths
 
 Your normal `make all` / `make build` commands are completely unaffected.
@@ -92,9 +92,9 @@ cd whisper.cpp
 ```
 This will create the XCFramework at `build-apple/whisper.xcframework`.
 
-### Building VoiceInk
+### Building Cheppu
 
-1. Clone the VoiceInk repository:
+1. Clone the Cheppu repository:
 ```bash
 git clone https://github.com/Beingpax/VoiceInk.git
 cd VoiceInk

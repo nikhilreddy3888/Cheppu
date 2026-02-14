@@ -42,7 +42,7 @@ class HotkeyManager: ObservableObject {
         }
     }
     
-    private let logger = Logger(subsystem: "com.prakashjoshipax.voiceink", category: "HotkeyManager")
+    private let logger = Logger(subsystem: "com.prakashjoshipax.cheppu", category: "HotkeyManager")
     private var whisperState: WhisperState
     private var miniRecorderShortcutManager: MiniRecorderShortcutManager
     private var powerModeShortcutManager: PowerModeShortcutManager

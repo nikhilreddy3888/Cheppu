@@ -3,87 +3,13 @@ import AppKit
 
 struct DashboardPromotionsSection: View {
     let licenseState: LicenseViewModel.LicenseState
-    @State private var isAffiliatePromotionDismissed: Bool = UserDefaults.standard.affiliatePromotionDismissed
 
-    private var shouldShowUpgradePromotion: Bool {
-        switch licenseState {
-        case .trial(let daysRemaining):
-            return daysRemaining <= 3
-        case .trialExpired:
-            return true
-        case .licensed:
-            return false
-        }
-    }
-
-    private var shouldShowAffiliatePromotion: Bool {
-        if case .licensed = licenseState {
-            return !isAffiliatePromotionDismissed
-        }
-        return false
-    }
-    
-    private var shouldShowPromotions: Bool {
-        shouldShowUpgradePromotion || shouldShowAffiliatePromotion
-    }
-    
+    // App is free — no promotions needed
     var body: some View {
-        if shouldShowPromotions {
-            HStack(alignment: .top, spacing: 18) {
-                if shouldShowUpgradePromotion {
-                    DashboardPromotionCard(
-                        badge: "30% OFF",
-                        title: "Unlock VoiceInk Pro For Less",
-                        message: "Share VoiceInk on your socials, and instantly unlock a 30% discount on VoiceInk Pro.",
-                        accentSymbol: "megaphone.fill",
-                        glowColor: Color(red: 0.08, green: 0.48, blue: 0.85),
-                        actionTitle: "Share & Unlock",
-                        actionIcon: "arrow.up.right",
-                        action: openSocialShare
-                    )
-                    .frame(maxWidth: .infinity)
-                }
-                
-                if shouldShowAffiliatePromotion {
-                    DashboardPromotionCard(
-                        badge: "AFFILIATE 30%",
-                        title: "Earn With The VoiceInk Affiliate Program",
-                        message: "Share VoiceInk with friends or your audience and receive 30% on every referral that upgrades.",
-                        accentSymbol: "link.badge.plus",
-                        glowColor: Color(red: 0.08, green: 0.48, blue: 0.85),
-                        actionTitle: "Explore Affiliate",
-                        actionIcon: "arrow.up.right",
-                        action: openAffiliateProgram,
-                        onDismiss: dismissAffiliatePromotion
-                    )
-                    .frame(maxWidth: .infinity)
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        } else {
-            EmptyView()
-        }
-    }
-    
-    private func openSocialShare() {
-        if let url = URL(string: "https://tryvoiceink.com/social-share") {
-            NSWorkspace.shared.open(url)
-        }
-    }
-    
-    private func openAffiliateProgram() {
-        if let url = URL(string: "https://tryvoiceink.com/affiliate") {
-            NSWorkspace.shared.open(url)
-        }
-    }
-
-    private func dismissAffiliatePromotion() {
-        withAnimation(.easeInOut(duration: 0.3)) {
-            isAffiliatePromotionDismissed = true
-        }
-        UserDefaults.standard.affiliatePromotionDismissed = true
+        EmptyView()
     }
 }
+
 
 private struct DashboardPromotionCard: View {
     let badge: String

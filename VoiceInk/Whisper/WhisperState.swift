@@ -99,7 +99,7 @@ class WhisperState: NSObject, ObservableObject {
     let recordingsDirectory: URL
     let enhancementService: AIEnhancementService?
     var licenseViewModel: LicenseViewModel
-    let logger = Logger(subsystem: "com.prakashjoshipax.voiceink", category: "WhisperState")
+    let logger = Logger(subsystem: "com.prakashjoshipax.cheppu", category: "WhisperState")
     var notchWindowManager: NotchWindowManager?
     var miniWindowManager: MiniWindowManager?
     
@@ -110,7 +110,7 @@ class WhisperState: NSObject, ObservableObject {
     init(modelContext: ModelContext, enhancementService: AIEnhancementService? = nil) {
         self.modelContext = modelContext
         let appSupportDirectory = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("com.prakashjoshipax.VoiceInk")
+            .appendingPathComponent("com.prakashjoshipax.Cheppu")
         
         self.modelsDirectory = appSupportDirectory.appendingPathComponent("WhisperModels")
         self.recordingsDirectory = appSupportDirectory.appendingPathComponent("Recordings")
@@ -441,7 +441,7 @@ class WhisperState: NSObject, ObservableObject {
         if var textToPaste = finalPastedText, transcription.transcriptionStatus == TranscriptionStatus.completed.rawValue {
             if case .trialExpired = licenseViewModel.licenseState {
                 textToPaste = """
-                    Your trial has expired. Upgrade to VoiceInk Pro at tryvoiceink.com/buy
+                    Your trial has expired. Upgrade to Cheppu at 
                     \n\(textToPaste)
                     """
             }

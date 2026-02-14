@@ -1,0 +1,74 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project VoiceForge.xcodeproj -scheme VoiceForge -configuration Release -derivedDataPath build CODE_SIGN_IDENTITY=- CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+
+User defaults from command line:
+    IDEDerivedDataPathOverride = /Users/nikhilreddy/Documents/Voice2Txt/VoiceInk/VoiceForge/build
+    IDEPackageSupportUseBuiltinSCM = YES
+
+Build settings from command line:
+    CODE_SIGN_IDENTITY = -
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+
+Resolve Package Graph
+
+Fetching from https://github.com/sindresorhus/KeyboardShortcuts.git (cached)
+
+Fetching from https://github.com/sparkle-project/Sparkle.git (cached)
+
+Creating working copy of package ‘KeyboardShortcuts’
+
+Checking out 2.3.0 of package ‘KeyboardShortcuts’
+
+Creating working copy of package ‘Sparkle’
+
+Checking out 2.8.1 of package ‘Sparkle’
+
+
+Resolved source packages:
+  KeyboardShortcuts: https://github.com/sindresorhus/KeyboardShortcuts.git @ 2.3.0
+  Sparkle: https://github.com/sparkle-project/Sparkle.git @ 2.8.1
+
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:macOS, arch:arm64, id:00006000-001428E10C23401E, name:My Mac }
+{ platform:macOS, arch:x86_64, id:00006000-001428E10C23401E, name:My Mac }
+{ platform:macOS, name:Any Mac }
+Prepare packages
+
+note: Using codesigning identity override: -
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (5 targets)
+    Target 'VoiceForge' in project 'VoiceForge'
+        ➜ Explicit dependency on target 'KeyboardShortcuts' in project 'KeyboardShortcuts'
+        ➜ Explicit dependency on target 'Sparkle' in project 'Sparkle'
+    Target 'Sparkle' in project 'Sparkle' (no dependencies)
+    Target 'KeyboardShortcuts' in project 'KeyboardShortcuts'
+        ➜ Explicit dependency on target 'KeyboardShortcuts' in project 'KeyboardShortcuts'
+        ➜ Explicit dependency on target 'KeyboardShortcuts_KeyboardShortcuts' in project 'KeyboardShortcuts'
+    Target 'KeyboardShortcuts' in project 'KeyboardShortcuts'
+        ➜ Explicit dependency on target 'KeyboardShortcuts_KeyboardShortcuts' in project 'KeyboardShortcuts'
+    Target 'KeyboardShortcuts_KeyboardShortcuts' in project 'KeyboardShortcuts' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 23c19956846a81decbbc8d18e659d5a0
+Build description path: /Users/nikhilreddy/Documents/Voice2Txt/VoiceInk/VoiceForge/build/Build/Intermediates.noindex/XCBuildData/23c19956846a81decbbc8d18e659d5a0.xcbuilddata
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-O, expected -Onone (in target 'VoiceForge' from project 'VoiceForge')
+error: There is no XCFramework found at '/Users/nikhilreddy/Documents/Voice2Txt/VoiceInk/VoiceForge/whisper.xcframework'. (in target 'VoiceForge' from project 'VoiceForge')
+error: There is no XCFramework found at '/Users/nikhilreddy/Documents/Voice2Txt/VoiceInk/VoiceForge/whisper.xcframework'. (in target 'VoiceForge' from project 'VoiceForge')
+note: Disabling previews because SWIFT_VERSION is set and SWIFT_OPTIMIZATION_LEVEL=-Owholemodule, expected -Onone (in target 'KeyboardShortcuts' from project 'KeyboardShortcuts')
+** BUILD FAILED **
+
+
+The following build commands failed:
+	Building project VoiceForge with scheme VoiceForge and configuration Release
+(1 failure)

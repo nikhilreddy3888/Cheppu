@@ -7,11 +7,11 @@ final class LicenseManager {
 
     private let keychain = KeychainService.shared
     private let userDefaults = UserDefaults.standard
-    private let logger = Logger(subsystem: "com.prakashjoshipax.voiceink", category: "LicenseManager")
+    private let logger = Logger(subsystem: "com.prakashjoshipax.cheppu", category: "LicenseManager")
 
-    private let licenseKeyIdentifier = "voiceink.license.key"
-    private let trialStartDateIdentifier = "voiceink.license.trialStartDate"
-    private let activationIdIdentifier = "voiceink.license.activationId"
+    private let licenseKeyIdentifier = "cheppu.license.key"
+    private let trialStartDateIdentifier = "cheppu.license.trialStartDate"
+    private let activationIdIdentifier = "cheppu.license.activationId"
     private let migrationCompletedKey = "LicenseKeychainMigrationCompleted"
 
     private init() {
@@ -71,9 +71,9 @@ final class LicenseManager {
         guard !userDefaults.bool(forKey: migrationCompletedKey) else { return }
 
         // Migrate license key
-        if let oldLicenseKey = userDefaults.string(forKey: "VoiceInkLicense"), !oldLicenseKey.isEmpty {
+        if let oldLicenseKey = userDefaults.string(forKey: "CheppuLicense"), !oldLicenseKey.isEmpty {
             licenseKey = oldLicenseKey
-            userDefaults.removeObject(forKey: "VoiceInkLicense")
+            userDefaults.removeObject(forKey: "CheppuLicense")
             logger.info("Migrated license key to Keychain")
         }
 
@@ -85,9 +85,9 @@ final class LicenseManager {
         }
 
         // Migrate activation ID
-        if let oldActivationId = userDefaults.string(forKey: "VoiceInkActivationId"), !oldActivationId.isEmpty {
+        if let oldActivationId = userDefaults.string(forKey: "CheppuActivationId"), !oldActivationId.isEmpty {
             activationId = oldActivationId
-            userDefaults.removeObject(forKey: "VoiceInkActivationId")
+            userDefaults.removeObject(forKey: "CheppuActivationId")
             logger.info("Migrated activation ID to Keychain")
         }
 
@@ -98,7 +98,7 @@ final class LicenseManager {
     /// Reads the old obfuscated trial start date from UserDefaults.
     private func getObfuscatedTrialStartDate() -> Date? {
         let salt = Obfuscator.getDeviceIdentifier()
-        let obfuscatedKey = Obfuscator.encode("VoiceInkTrialStartDate", salt: salt)
+        let obfuscatedKey = Obfuscator.encode("CheppuTrialStartDate", salt: salt)
 
         guard let obfuscatedValue = userDefaults.string(forKey: obfuscatedKey),
               let decodedValue = Obfuscator.decode(obfuscatedValue, salt: salt),
@@ -112,7 +112,7 @@ final class LicenseManager {
     /// Clears the old obfuscated trial start date from UserDefaults.
     private func clearObfuscatedTrialStartDate() {
         let salt = Obfuscator.getDeviceIdentifier()
-        let obfuscatedKey = Obfuscator.encode("VoiceInkTrialStartDate", salt: salt)
+        let obfuscatedKey = Obfuscator.encode("CheppuTrialStartDate", salt: salt)
         userDefaults.removeObject(forKey: obfuscatedKey)
     }
 

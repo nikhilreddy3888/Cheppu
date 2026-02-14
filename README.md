@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="VoiceInk/Assets.xcassets/AppIcon.appiconset/256-mac.png" width="180" height="180" />
-  <h1>VoiceInk</h1>
+  <img src="Cheppu/Assets.xcassets/AppIcon.appiconset/256-mac.png" width="180" height="180" />
+  <h1>Cheppu</h1>
   <p>Voice to text app for macOS to transcribe what you say to text almost instantly</p>
 
   [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -9,20 +9,20 @@
   ![GitHub all releases](https://img.shields.io/github/downloads/Beingpax/VoiceInk/total)
   ![GitHub stars](https://img.shields.io/github/stars/Beingpax/VoiceInk?style=social)
   <p>
-    <a href="https://tryvoiceink.com">Website</a> •
-    <a href="https://www.youtube.com/@tryvoiceink">YouTube</a>
+    <a href="https://github.com/Beingpax/Cheppu">Website</a> •
+    <a href="https://">YouTube</a>
   </p>
 
-  <a href="https://tryvoiceink.com">
-    <img src="https://img.shields.io/badge/Download%20Now-Latest%20Version-blue?style=for-the-badge&logo=apple" alt="Download VoiceInk" width="250"/>
+  <a href="https://github.com/Beingpax/Cheppu">
+    <img src="https://img.shields.io/badge/Download%20Now-Latest%20Version-blue?style=for-the-badge&logo=apple" alt="Download Cheppu" width="250"/>
   </a>
 </div>
 
 ---
 
-VoiceInk is a native macOS application that transcribes what you say to text almost instantly. You can find all the information and download the app from [here](https://tryvoiceink.com). 
+Cheppu is a native macOS application that transcribes what you say to text almost instantly. You can find all the information and download the app from [here](https://github.com/Beingpax/VoiceInk). 
 
-![VoiceInk Mac App](https://github.com/user-attachments/assets/12367379-83e7-48a6-b52c-4488a6a04bba)
+![Cheppu Mac App](https://github.com/user-attachments/assets/12367379-83e7-48a6-b52c-4488a6a04bba)
 
 After dedicating the past 5 months to developing this app, I've decided to open source it for the greater good. 
 
@@ -42,17 +42,17 @@ My goal is to make it **the most efficient and privacy-focused voice-to-text sol
 ## Get Started
 
 ### Download
-Get the latest version with a free trial from [tryvoiceink.com](https://tryvoiceink.com). Your purchase helps me work on VoiceInk full-time and continuously improve it with new features and updates.
+Get the latest version with a free trial from [github.com/Beingpax/VoiceInk](https://github.com/Beingpax/VoiceInk). Your purchase helps me work on Cheppu full-time and continuously improve it with new features and updates.
 
 #### Homebrew
-Alternatively, you can install VoiceInk via `brew`:
+Alternatively, you can install Cheppu via `brew`:
 
 ```shell
-brew install --cask voiceink
+brew install --cask cheppu
 ```
 
 ### Build from Source
-As an open-source project, you can build VoiceInk yourself by following the instructions in [BUILDING.md](BUILDING.md). However, the compiled version includes additional benefits like automatic updates, priority support via Discord and email, and helps fund ongoing development.
+As an open-source project, you can build Cheppu yourself by following the instructions in [BUILDING.md](BUILDING.md). However, the compiled version includes additional benefits like automatic updates, priority support via Discord and email, and helps fund ongoing development.
 
 ## Requirements
 
@@ -61,7 +61,7 @@ As an open-source project, you can build VoiceInk yourself by following the inst
 ## Documentation
 
 - [Building from Source](BUILDING.md) - Detailed instructions for building the project
-- [Contributing Guidelines](CONTRIBUTING.md) - How to contribute to VoiceInk
+- [Contributing Guidelines](CONTRIBUTING.md) - How to contribute to Cheppu
 - [Code of Conduct](CODE_OF_CONDUCT.md) - Our community standards
 
 ## Contributing
@@ -92,7 +92,7 @@ If you encounter any issues or have questions, please:
 - [FluidAudio](https://github.com/FluidInference/FluidAudio) - Used for Parakeet model implementation
 
 ### Essential Dependencies
-- [Sparkle](https://github.com/sparkle-project/Sparkle) - Keeping VoiceInk up to date
+- [Sparkle](https://github.com/sparkle-project/Sparkle) - Keeping Cheppu up to date
 - [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) - User-customizable keyboard shortcuts
 - [LaunchAtLogin](https://github.com/sindresorhus/LaunchAtLogin) - Launch at login functionality
 - [MediaRemoteAdapter](https://github.com/ejbills/mediaremote-adapter) - Media playback control during recording

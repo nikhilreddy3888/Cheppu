@@ -12,4 +12,4 @@ PROVISIONING_PROFILE_SPECIFIER =
 // (relative paths break SPM package targets that resolve from their own source root)
 
 // Add LOCAL_BUILD compilation flag so Swift code can use #if LOCAL_BUILD
-SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) LOCAL_BUILD
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = LOCAL_BUILD DEBUG
